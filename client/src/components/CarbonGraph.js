@@ -32,7 +32,7 @@ const CarbonGraph = ({forestId}) => {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: 'utc', position: 'bottom', showTicks: false },
+      { primary: true, type: 'linear', position: 'bottom', showTicks: false },
       { type: 'linear', position: 'left' },
     ],
     []
