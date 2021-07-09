@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/details/:id">
+          <Route path="/details/:forest_name">
             <DetailsPage />
           </Route>
           <Route path="/">

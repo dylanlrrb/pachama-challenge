@@ -4,6 +4,8 @@ version: '3.9'
 services:
   client:
     build: client/
+    links:
+      - backend
     ports: 
       - '8080:5000'
     depends_on:
@@ -11,10 +13,18 @@ services:
 
   backend:
     build: backend/
+    links:
+      - database
     ports:
       - '5000:5000'
-    # depends_on:
-    #   - 'database'
+    depends_on:
+      - 'database'
 
-  # database:
-  #   image: mysql
+  database:
+    build: database/
+    command: --secure-file-priv="" --local_infile
+    ports:
+      - "32000:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw

@@ -11,12 +11,12 @@ export async function fetchForestTypes() {
   return response.json();
 }
 
-export async function fetchForestDetails(forestId) {
-  const response = await fetch(`${host}/api/details?id=${forestId}`);
+export async function fetchForestDetails(forest_name) {
+  const response = await fetch(`${host}/api/details?id=${forest_name}`);
   return response.json();
 }
 
-export async function fetchCarbonDetails(forestId, from) {
-  const response = await fetch(`${host}/api/carbon_details?id=${forestId}&from=${from}`);
+export async function fetchCarbonDetails(forest_name, from) {
+  const response = await fetch(`${host}/api/carbon_details?id=${forest_name}&from=${from}`);
   return response.json();
 }

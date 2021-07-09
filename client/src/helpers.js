@@ -1,5 +1,8 @@
 export function capitalize(str) {
-  return `${str[0].toUpperCase()}${str.substring(1)}`
+  if (str) {
+    return `${str[0].toUpperCase()}${str.substring(1)}`;
+  }
+  return '';
 }
 
 export function searchStringToParamObject() {
@@ -10,7 +13,7 @@ export function searchStringToParamObject() {
 export function paramObjectToSearchString(searchParams) {
   const urlSearchParams = new URLSearchParams();
   for (let key in searchParams) {
-    if (searchParams[key] !== undefined) {
+    if (searchParams[key] !== undefined && searchParams[key] !== '') {
       urlSearchParams.set(key, searchParams[key]);
     }
   }

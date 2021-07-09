@@ -87,7 +87,6 @@ const SearchPage = () => {
       <div>Searching by: {results.metadata.keywords}</div>
       <div>Filtering by Forest Type: {results.metadata.forest_type}</div>
       {results.hits.map((hit) => <ForestCard
-          id={hit.id}
           thumbnail_image={hit.thumbnail_image}
           name={hit.name}
           forest_type={hit.forest_type}
@@ -96,9 +95,9 @@ const SearchPage = () => {
       <div>
         {generatePagination().map(({pageNumber, params}) => <button key={pageNumber} onClick={onPaginationButtonClick(params)}>{pageNumber}</button>)}
       </div>
-      <br />keywords: {searchParams.keywords}
+      {/* <br />keywords: {searchParams.keywords}
       <br />forest_type: {searchParams.forest_type}
-      <br />page: {searchParams.page}
+      <br />page: {searchParams.page} */}
     </div>
   );
 };

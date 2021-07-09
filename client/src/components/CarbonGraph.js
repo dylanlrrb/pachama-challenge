@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Chart } from 'react-charts'
 import { fetchCarbonDetails } from '../fetchers';
 
-const CarbonGraph = ({forestId}) => {
-  const monthAgo = 100000;
+const CarbonGraph = ({forest_name}) => {
+  const monthAgo = '2021-6-1';
   const [carbonDetails, setCarbonDetails] = useState({hits: [], metadata: {}})
 
   useEffect(() => {
     (async () => {
-      const carbonDetails = await fetchCarbonDetails(forestId, monthAgo);
+      const carbonDetails = await fetchCarbonDetails(forest_name, monthAgo);
       setCarbonDetails(carbonDetails);
 
       
     })();
-  }, [forestId]);
+  }, [forest_name]);
 
   const data = React.useMemo(
     () => [
       {
         label: carbonDetails.metadata.y_units,
-        data: carbonDetails.hits.map(({timestamp, value}) => {
+        data: carbonDetails.hits.map(({collection_time, value}) => {
           return {
-            primary: timestamp,
+            primary: collection_time,
             secondary: value,
           }
         }),
@@ -32,7 +32,7 @@ const CarbonGraph = ({forestId}) => {
 
   const axes = React.useMemo(
     () => [
-      { primary: true, type: 'linear', position: 'bottom', showTicks: false },
+      { primary: true, type: 'utc', position: 'bottom', showTicks: false },
       { type: 'linear', position: 'left' },
     ],
     []
