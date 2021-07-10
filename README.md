@@ -7,7 +7,7 @@
 - make sure you have docker and docker-compose installed on your machine
 - pull down or unzip repo and cd into the repo
 - run "`docker-compose up`"
-- navigate to [localhost](http://localhost:8080/)
+- navigate to [localhost:8080](http://localhost:8080/)
 
 
 ## Discussion points and improvements
