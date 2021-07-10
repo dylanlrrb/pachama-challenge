@@ -36,3 +36,4 @@ Improvements:
 - I would want to spend more time thinking about accessibility, I've used mostly semantic HTML to help a screen reader parse the page, but there is a lot more that could be done
 - the column in the database for the long description that renders on the details page is of type `VARCHAR(255)`; it would need to be changed to accommodate a longer string if it was an actual long description
 - the database password is hard coded in; if this was not a demo I would use environment variables to set the password
+- data persistence between database container destruction could be achived by mounting a volume on the host file system and mapping in to /var/lib/mysql in the container 
