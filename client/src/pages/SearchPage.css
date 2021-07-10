@@ -1,0 +1,26 @@
+.search-page {
+  padding: 50px 100px;
+}
+
+.search-page__controls {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  width: 100%;
+}
+
+.search-page__results-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.search-page__pagination {
+  display: flex;
+  justify-content: center;
+  height: 30px;
+}
+
+.search-page__pagination__button {
+  margin: 3px;
+}

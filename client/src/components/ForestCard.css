@@ -1,0 +1,29 @@
+.forest-card {
+  display: inline-block;
+  height: 350px;
+  width: 300px;
+  margin: 50px;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 20px;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.forest-card__title {
+  position: absolute;
+  background-color: rgb(140, 140, 252);
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.forest-card__image {
+  height: 50%;
+  width: 100%;
+}
+
+.forest-card__description {
+  margin: 10px 15px;
+}

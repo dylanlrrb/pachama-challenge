@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Chart } from 'react-charts'
 import { fetchCarbonDetails } from '../fetchers';
+import './CarbonGraph.css'
 
 const CarbonGraph = ({forest_name}) => {
-  const monthAgo = '2021-6-1';
+  const monthAgo = '2021-6-1'; // in production this would be a dynamic value based on the current date
   const [carbonDetails, setCarbonDetails] = useState({hits: [], metadata: {}})
 
   useEffect(() => {
@@ -39,12 +40,7 @@ const CarbonGraph = ({forest_name}) => {
   )
 
   return (
-    <div
-      style={{
-        width: '600px',
-        height: '400px',
-      }}
-    >
+    <div className="carbon-graph">
       <span>{carbonDetails.metadata.y_units}</span>
       <Chart data={data} axes={axes} />
     </div>
