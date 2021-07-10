@@ -27,3 +27,7 @@
 .forest-card__description {
   margin: 10px 15px;
 }
+
+.forest-card__description p {
+  color: black;
+}

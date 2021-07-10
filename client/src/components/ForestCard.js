@@ -10,11 +10,11 @@ const ForestCard = ({name, thumbnail_image, forest_type, description_brief}) => 
         <div className="forest-card__image" style={{
           backgroundImage: `url(${thumbnail_image})`,
         }} />
+        <div className="forest-card__description">
+          <p>Forest Type: {forest_type}</p>
+          <p>{description_brief}</p>
+        </div>
       </Link>
-      <div className="forest-card__description">
-        <p>Forest Type: {forest_type}</p>
-        <p>{description_brief}</p>
-      </div>
     </div>
   )
 }
